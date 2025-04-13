@@ -33,8 +33,8 @@
         <!-- Menú de navegación -->
         <ul class="nav-links">
           <li><a href="#inicio" class="active">Inicio</a></li>
-          <li><a href="#menu">Menú</a></li>
-          <li><a href="#sucursales">Sucursales</a></li>
+          <!-- <li><a href="#menu">Menú</a></li> -->
+          <li><a href="#territorio">Sucursales</a></li>
           <li><a href="#about">Nosotros</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
@@ -141,14 +141,168 @@
     </div>
   </section>
   
-  
+
+  <!-- Sección de Territorio Monkey Papas -->
+<section class="territorio-section" id="territorio">
+  <div class="territorio-container">
+    <!-- Imagen / Ilustración: Mapa de México con sucursales, personaje, etc. -->
+    <!-- Sustituye "mapa-mexico.png" por la imagen que tengas -->
+    <div class="territorio-image">
+      <img
+        src="src/img/Galleria/output.png"
+        alt="Mapa de México con Sucursales Monkey Papas"
+        style="width: 380px;;"
+      />
+    </div>
+
+    <!-- Bloque de texto e información -->
+    <div class="territorio-info">
+      <h2>Territorio Buffalo</h2>
+      <p>
+        En el transcurso de la pandemia,
+        enfrentamos desafíos sin
+        precedentes que nos llevaron a
+        tomar decisiones difíciles. 
+        <br>
+        Cerramos algunas de nuestras
+        sucursales, pero de las
+        adversidades surgió una nueva
+        oportunidad. Con el deseo de
+        adaptarnos y evolucionar, nació
+        el concepto fresco y renovado
+        que hoy conoces como
+        Búfalo Negro.
+
+        <br><br>
+
+        Conoce todas nuestras sucursales!!
+      </p>
+      <!-- Botón de Sucursales -->
+      <a href="#sucursales" class="territorio-button">Sucursales</a>
+    </div>
+  </div>
+</section>
+
+<!-- Sección o barra de marca -->
+<section class="brand-section">
+  <div class="brand-container">
+    <!-- Título principal (Monkey Papas) -->
+    <h1 class="brand-title">
+      <img class="brand-logo" src="src/img/logos/NameF.png" alt="Logo Monkey Papas">
+    </h1>
+
+    <!-- Frase o tagline con líneas decorativas a los costados -->
+    <div class="brand-subtitle">
+      <div class="brand-line"></div>
+      <span>Compromiso con la calidad y frescura.</span>
+      <div class="brand-line"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Sección "Quiero mi Franquicia" -->
+<section class="franquicia-section" id="franquicia">
+  <div class="franquicia-container">
+    <h2 class="franquicia-title">¡QUIERO MI FRANQUICIA!</h2>
+    <form class="franquicia-form" action="#" method="post">
+      
+      <!-- Fila: Nombre - Apellido -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nombre">Nombre*</label>
+          <input type="text" id="nombre" name="nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellido*</label>
+          <input type="text" id="apellido" name="apellido" required />
+        </div>
+      </div>
+
+      <!-- Fila: Correo - Teléfono -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Correo electrónico*</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono*</label>
+          <input type="tel" id="telefono" name="telefono" required />
+        </div>
+      </div>
+
+      <!-- Fila: Presupuesto - Estado de interés -->
+      <!-- <div class="form-row">
+        <div class="form-group">
+          <label for="presupuesto">Presupuesto (MXN)*</label>
+          <input type="number" id="presupuesto" name="presupuesto" required />
+        </div>
+        <div class="form-group">
+          <label for="estado">Estado de interés*</label>
+          <select id="estado" name="estado" required>
+            <option value="">Seleccionar...</option>
+            <option value="Aguascalientes">Aguascalientes</option>
+            <option value="Baja California">Baja California</option>
+            <option value="Baja California Sur">Baja California Sur</option>
+            <option value="Campeche">Campeche</option>
+             Agrega más estados según sea necesario 
+          </select>
+        </div>
+      </div> -->
+
+      <!-- Fila: Cuota de interés -->
+      <!-- <div class="form-row">
+        <div class="form-group">
+          <label for="cuota">Cuota de interés</label>
+          <input type="number" id="cuota" name="cuota" />
+        </div>
+      </div> -->
+
+      <!-- Fila: Comentario o mensaje (ocupa todo el ancho) -->
+      <div class="form-row">
+        <div class="form-group full-width">
+          <label for="comentario">Comentario o mensaje</label>
+          <textarea id="comentario" name="comentario" rows="4"></textarea>
+        </div>
+      </div>
+
+      <!-- Botón de envío -->
+      <button type="submit" class="franquicia-submit">Enviar</button>
+    </form>
+  </div>
+</section>
 
 
 
-  <!-- Footer o pie de página -->
-  <footer>
-    <!-- Contenido footer... -->
-  </footer>
+
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <!-- Bloque de la marca -->
+    <div class="footer-brand">
+      <!-- Logo de Monkey Papas -->
+      <img class="footer-logo" src="src/img/logos/NameF.png" alt="Logo Monkey Papas">
+      <!-- Título/Nombre de la marca -->
+      <h2 class="footer-title">Monkey Papas</h2>
+    </div>
+
+    <!-- Menú de navegación del footer (opcional) -->
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#sucursales">Sucursales</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- Información adicional del footer -->
+    <div class="footer-info">
+      <p>&copy; 2025 Buffalo Negro. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

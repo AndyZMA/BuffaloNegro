@@ -303,7 +303,357 @@
       font-size: 0.95rem;
     }
   }
+
   
+  /* ======================================
+   Sección de Territorio Monkey Papas
+   ====================================== */
+.territorio-section {
+  /* Fondo blanco o un color claro; ajusta según tu preferencia.
+     Si deseas mantener un estilo oscuro, usa #000 y ajusta el texto. */
+  background-color: #fff;
+
+  /* Si tienes un patrón o diseño de fondo, puedes usarlo así:
+     background-image: url("../img/pattern-fondo.png");
+     background-repeat: no-repeat;
+     background-position: right; 
+     background-size: contain; 
+  */
+
+  padding: 80px 20px; /* Espacio arriba y abajo */
+}
+
+.territorio-container {
+  max-width: 1200px; /* Ajusta el ancho máximo */
+  margin: 0 auto;
+  display: flex;     /* Para ubicar texto e imagen en dos columnas */
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;         /* Espacio entre imagen y texto */
+}
+
+.territorio-image {
+  flex: 1;           /* Ocupa 1 parte de la fila, la imagen se adapta */
+  display: flex;
+  justify-content: center; 
+  /* Para centrar la imagen horizontalmente */
+}
+
+.territorio-image img {
+  max-width: 100%;
+  width: 500px; /* Ajusta según el tamaño que desees */
+  height: auto;
+}
+
+.territorio-info {
+  flex: 1; /* Ocupa 1 parte de la fila para el texto */
+  padding: 1rem;  /* Pequeño padding interno (opcional) */
+}
+
+.territorio-info h2 {
+  color: #f0cc04;          /* Amarillo característico de Monkey Papas */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.territorio-info p {
+  color: #111;       /* Texto en negro o gris oscuro */
+  font-size: 1rem;
+  line-height: 1.6;  
+  margin-bottom: 1.5rem;
+}
+
+/* Botón "Sucursales" */
+.territorio-button {
+  display: inline-block;
+  background-color: #111;
+  color: #f0cc04;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.territorio-button:hover {
+  background-color: #fff;
+  color: #111;
+}
+
+/* Adaptación a pantallas más pequeñas */
+@media (max-width: 768px) {
+  .territorio-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .territorio-image img {
+    width: 100%;      /* La imagen se ajusta al ancho */
+    max-width: 300px; /* Evita que crezca demasiado en pantallas pequeñas */
+    margin-bottom: 20px;
+  }
+}
+
+
+.brand-section {
+  background-color: #000; /* Fondo negro */
+  padding: 80px 20px;     /* Espacio superior e inferior */
+  text-align: center;     /* Centrado general del contenido */
+}
+
+.brand-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Mantén el padding interno si lo tenías: 
+     padding: 0 1rem; (opcional) */
+}
+
+.brand-title {
+  margin: 0;
+  padding: 0;
+}
+
+/* Logo centrado en todos los dispositivos */
+.brand-logo {
+  width: 500px;        /* Ajusta al tamaño deseado */
+  display: block;      /* display: block para que margin: auto funcione */
+  margin: 0 auto;      /* Centra horizontalmente */
+}
+
+/* Subtítulo con líneas decorativas a los costados */
+.brand-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 10px;
+}
+
+.brand-line {
+  width: 60px;
+  height: 2px;
+  background-color: #fdda00;  /* Amarillo */
+}
+
+.brand-subtitle span {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Responsivo: reducir tamaño en pantallas pequeñas */
+@media (max-width: 768px) {
+  .brand-logo {
+    width: 300px; /* Ajusta para móviles */
+  }
+  .brand-line {
+    width: 40px; 
+  }
+}
+
+
+/* ===============================
+   Sección "Quiero mi Franquicia"
+   =============================== */
+   .franquicia-section {
+    /* Reemplaza la ruta según tu carpeta real */
+    background: url("../img/Banner/BannerForm.JPG") no-repeat center center;
+    background-size: cover;      /* Ajuste para rellenar el contenedor sin distorsión */
+    background-attachment: scroll; /* o 'fixed' si deseas efecto parallax */
+    background-position: center; /* Asegura que se centre en el contenedor */
+    
+    position: relative;
+    padding: 80px 20px;   /* Mantén tu padding vertical y horizontal */
+    color: #fff;          /* Texto blanco sobre la imagen */
+    
+    /* Opcional: fuerza una altura mínima para lucir parte de la foto */
+    min-height: 600px;
+  }
+  
+
+  
+  
+  .franquicia-container {
+    max-width: 1200px;      /* Ancho máximo de la sección */
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .franquicia-title {
+    font-size: 2rem;
+    color: #fdda00;  /* Amarillo característico de Monkey Papas */
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  
+  /* Formulario */
+  .franquicia-form {
+    /* Fondo semi-transparente para resaltar los campos */
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);   /* Suaviza el fondo detrás (si el navegador lo soporta) */
+    border-radius: 8px;
+    padding: 2rem;
+  }
+  
+  /* Filas de campos (flex para alinear horizontalmente) */
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;  /* Para que baje a la siguiente línea si se queda sin espacio */
+    gap: 1rem;        /* Espacio entre grupos */
+    margin-bottom: 1rem;
+  }
+  
+  /* Grupo de cada campo */
+  .form-group {
+    flex: 1;         /* Para que cada campo ocupe el mismo ancho dentro de la fila */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Campo de texto, select y textarea */
+  .form-group label {
+    font-weight: 600; 
+    margin-bottom: 0.5rem;
+    color: #fff;      /* Etiquetas en blanco */
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    background-color: #fff;
+    color: #111;      /* Texto de los campos en negro */
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  /* Si deseas estilizar placeholders, puedes hacerlo así: */
+  ::placeholder {
+    color: #aaa;
+  }
+  
+  /* Clase para campos que ocupen todo el ancho */
+  .full-width {
+    flex: 1 1 100%;
+  }
+  
+  /* Botón de envío */
+  .franquicia-submit {
+    display: inline-block;
+    background-color: #fdda00;  /* Amarillo */
+    color: #111;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem; /* Pequeño espacio sobre el botón */
+  }
+  
+  .franquicia-submit:hover {
+    background-color: #fff; 
+    color: #111;
+  }
+  
+  /* Responsivo para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .franquicia-title {
+      font-size: 1.5rem;
+    }
+    .franquicia-form {
+      padding: 1.5rem;
+    }
+  }
+
+
+  /* ===============================
+   Footer de Monkey Papas
+   =============================== */
+.site-footer {
+  background-color: #000;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Utilizamos flexbox para centrar y distribuir los bloques del footer */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Bloque de la marca */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  width: 200px;
+  /* Ajusta este valor según el tamaño real de tu logo */
+  margin-bottom: 10px;
+}
+
+.footer-title {
+  font-size: 1.8rem;
+  color: #fdda00;  /* Amarillo característico de Monkey Papas */
+  margin: 0;
+}
+
+/* Menú de navegación del footer */
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.footer-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #fdda00;
+}
+
+/* Información adicional */
+.footer-info p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* ------------------------------
+   Responsividad del footer
+   ------------------------------ */
+@media (max-width: 768px) {
+  .footer-logo {
+    width: 150px;
+  }
+  
+  .footer-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
   
 
   
