@@ -1,0 +1,338 @@
+/* 
+  --------------------------------------------------------
+    RESET BÁSICO
+  --------------------------------------------------------
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000; /* Fondo general en negro */
+    color: #fff;            /* Texto en blanco por defecto */
+  }
+  
+  /*
+    --------------------------------------------------------
+      ESTILOS DE LA NAVEGACIÓN (NAV)
+    --------------------------------------------------------
+  */
+  .navbar {
+    width: 100%;
+    background-color: #111; /* Nav en un tono ligeramente distinto */
+    padding: 0.5rem 1rem;
+    position: relative;
+    z-index: 10; 
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px; /* Ajusta según tu preferencia */
+    margin: 0 auto;
+  }
+  
+  /* LOGO */
+  .logo img {
+    max-height: 60px; /* Ajusta altura del logo */
+    width: auto;
+  }
+  
+  /* LINKS DEL MENÚ */
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links li {
+    position: relative;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: #fdda00; /* Color dorado/amarillo */
+  }
+  
+  /* BOTÓN FRANQUICIA A LA DERECHA */
+  .btn-franquicia a {
+    display: inline-block;
+    background-color: #fdda00;
+    color: #111;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-franquicia a:hover {
+    background-color: #fff; 
+    color: #111;
+  }
+  
+  /* Botón "hamburger" para versión móvil (si lo deseas) */
+  .hamburger-btn {
+    display: none; /* Lo ocultamos en desktop */
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .hamburger-btn .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+  }
+  
+  /*
+    --------------------------------------------------------
+      BANNER / HERO SECTION
+    --------------------------------------------------------
+  */
+  .hero-section {
+    width: 100%;
+    height: 100vh; /* Ajusta la altura del banner */
+    position: relative;
+    background-color: #000;
+    /* 
+      Reemplaza "ruta-de-tu-banner.jpg" con la imagen real 
+      o con un gradient si tienes varias imágenes.
+    */
+    background-image: url("../img/banner/BuffBAner1.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Contenedor interno del hero */
+  .hero-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center; /* Centrar contenido */
+  }
+  
+  .hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  
+  .hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+  
+  /* Botones en el banner */
+  .hero-buttons {
+    display: inline-flex;
+    gap: 1rem;
+  }
+  
+  .btn-hero {
+    background-color: #fdda00;
+    color: #111;
+    font-weight: 600;
+    padding: 0.8rem 1.4rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-hero:hover {
+    background-color: #fff;
+  }
+
+
+
+
+/* ================================
+   Sección "Acerca de / Nosotros" 
+   ================================ */
+
+/* Contenedor general de la sección */
+.about-section {
+    background-color: #000; /* Fondo negro para mantener el estilo */
+    padding: 80px 20px;
+    text-align: center; /* Centra todo el contenido */
+    color: #fff;        /* Texto blanco */
+  }
+  
+  /* Centrar y limitar el ancho interno */
+  .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Contenedor de la imagen */
+  .about-img-container {
+    margin-bottom: 20px;
+  }
+  
+  /* Imagen principal */
+  .about-img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Título principal */
+  .about-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fdda00; /* Amarillo característico */
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  
+  /* Texto descriptivo */
+  .about-text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Ajustes Responsivos */
+  @media (max-width: 768px) {
+    .about-img {
+      max-width: 250px;
+    }
+  
+    .about-title {
+      font-size: 1.5rem;
+    }
+  
+    .about-text {
+      font-size: 0.95rem;
+    }
+  }
+
+
+  /* ==========================================
+   Sección de Galería / Imágenes
+   ========================================== */
+.gallery-section {
+    background-color: #000; /* Fondo negro para mantener el estilo */
+    padding: 80px 20px;     /* Espaciado superior e inferior */
+    text-align: center;
+    color: #fff;            /* Texto en blanco */
+  }
+  
+  .gallery-container {
+    max-width: 1200px;      /* Ajusta según tus necesidades */
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Título de la sección */
+  .gallery-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #fdda00; /* Amarillo característico de Monkey Papas */
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  
+  /* Texto descriptivo debajo del título */
+  .gallery-subtext {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+  
+  /* Contenedor en cuadrícula para las imágenes */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* auto-fit permite que las columnas se ajusten automáticamente
+       y minmax(250px, 1fr) define el ancho mínimo y máximo */
+    gap: 20px;  /* Espacio entre las columnas y filas */
+  }
+  
+  /* Cada "tarjeta" de imagen */
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #fdda00; /* Marco amarillo */
+    border-radius: 5px;
+  }
+  
+  /* Imagen dentro de cada tarjeta */
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para que encaje sin deformarse */
+    transition: transform 0.3s ease;
+  }
+  
+  /* Efecto hover: la imagen se agranda ligeramente */
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* Ajustes Responsivos (opcionales) */
+  @media (max-width: 768px) {
+    .gallery-title {
+      font-size: 1.5rem;
+    }
+    .gallery-subtext {
+      font-size: 0.95rem;
+    }
+  }
+  
+  
+
+  
+  /*
+    --------------------------------------------------------
+      MEDIA QUERIES PARA RESPONSIVE
+    --------------------------------------------------------
+  */
+  @media (max-width: 768px) {
+    /* Ajustes en nav */
+    .nav-links {
+      display: none; /* Por ejemplo, se ocultan los links y se muestra el menú hamburguesa */
+    }
+  
+    .hamburger-btn {
+      display: flex; /* Lo mostramos en móvil */
+    }
+  
+    /* Ajustes en banner */
+    .hero-section {
+      height: 60vh;
+    }
+  
+    .hero-text h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-text p {
+      font-size: 1rem;
+    }
+  }
+  
