@@ -20,83 +20,101 @@
       ESTILOS DE LA NAVEGACIÓN (NAV)
     --------------------------------------------------------
   */
-  .navbar {
-    width: 100%;
-    background-color: #111; /* Nav en un tono ligeramente distinto */
-    padding: 0.5rem 1rem;
-    position: relative;
-    z-index: 10; 
-  }
-  
-  .navbar-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px; /* Ajusta según tu preferencia */
-    margin: 0 auto;
-  }
-  
-  /* LOGO */
-  .logo img {
-    max-height: 60px; /* Ajusta altura del logo */
-    width: auto;
-  }
-  
-  /* LINKS DEL MENÚ */
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .nav-links li {
-    position: relative;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    font-weight: 600;
-    color: #fff;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links a:hover,
-  .nav-links a.active {
-    color: #fdda00; /* Color dorado/amarillo */
-  }
-  
-  /* BOTÓN FRANQUICIA A LA DERECHA */
-  .btn-franquicia a {
-    display: inline-block;
-    background-color: #fdda00;
-    color: #111;
-    padding: 0.5rem 1.2rem;
-    border-radius: 4px;
-    font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .btn-franquicia a:hover {
-    background-color: #fff; 
-    color: #111;
-  }
-  
-  /* Botón "hamburger" para versión móvil (si lo deseas) */
-  .hamburger-btn {
-    display: none; /* Lo ocultamos en desktop */
-    flex-direction: column;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .hamburger-btn .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 4px 0;
-  }
-  
+  /* ===============================
+   Navbar - Ahora Fija
+   =============================== */
+.navbar {
+  width: 100%;
+  background-color: #111;      /* Fondo en tono oscuro */
+  padding: 0.5rem 1rem;
+  position: fixed;             /* Se fija en la ventana */
+  top: 0;                      /* Se alinea al tope */
+  left: 0;
+  z-index: 100;                /* Asegura que esté por encima de otros elementos */
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;           /* Ajusta según lo necesites */
+  margin: 0 auto;
+}
+
+/* LOGO */
+.logo img {
+  max-height: 60px;           /* Ajusta la altura del logo */
+  width: auto;
+}
+
+/* Enlaces del menú */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #fdda00;             /* Color amarillo/dorado */
+}
+
+/* Botón Franquicia */
+.btn-franquicia a {
+  display: inline-block;
+  background-color: #fdda00;
+  color: #111;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-franquicia a:hover {
+  background-color: #fff;
+  color: #111;
+}
+
+/* Botón "hamburger" para versión móvil */
+.hamburger-btn {
+  display: none;              /* Se oculta en desktop */
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger-btn .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+}
+
+/* ---------- */
+/* NOTA: Cuando usas position: fixed, el contenido principal puede quedar tapado.
+   Agrega un padding-top al body o a tu contenedor principal para compensar la altura del navbar.
+   Por ejemplo, si el navbar mide aproximadamente 80px de alto:
+*/
+body {
+  padding-top: 80px; /* Ajusta este valor según la altura real de tu navbar */
+}
+
+/* ---------------------
+   Resto de tus estilos...
+----------------------- */
+
   /*
     --------------------------------------------------------
       BANNER / HERO SECTION
