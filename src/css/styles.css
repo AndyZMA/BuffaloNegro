@@ -129,7 +129,7 @@ body {
       Reemplaza "ruta-de-tu-banner.jpg" con la imagen real 
       o con un gradient si tienes varias imágenes.
     */
-    background-image: url("../img/banner/BuffBAner1.png");
+    background-image: url("../img/banner/BannerF.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -470,6 +470,77 @@ body {
     width: 40px; 
   }
 }
+
+
+/* ================================
+   Sección de Video Menú
+   ================================ */
+   .video-menu-section {
+    position: relative;
+    width: 100%;
+    background-color: #000;   /* Fondo negro de respaldo */
+    overflow: hidden;
+  }
+  
+  .video-menu-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    /* Ajusta la relación ancho/alto (por ejemplo, 16:9 => padding-top: 56.25%) */
+    padding-top: 56.25%;
+  }
+  
+  .video-menu {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* Cubre todo el contenedor recortando si es necesario */
+    z-index: 1;
+    /* Si quieres un overlay (oscurecer ligeramente) */
+  }
+  
+  /* Si quieres un overlay semitransparente encima del vídeo */
+  .video-menu-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    z-index: 2;
+  }
+  
+  /* Contenido encima del vídeo (opcional) */
+  .video-menu-section .video-menu-container .overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+    color: #fdda00;
+    text-align: center;
+  }
+  
+  /* Ejemplo de texto encima del vídeo */
+  /*
+  <div class="overlay-content">
+    <h2>Descubre Nuestro Menú</h2>
+    <a href="#menu" class="btn-hero">Ver Menú</a>
+  </div>
+  */
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .video-menu-container {
+      padding-top: 75%; /* Ajusta la relación en móviles si deseas más altura */
+    }
+  }
+  
+
 
 
 /* ===============================
