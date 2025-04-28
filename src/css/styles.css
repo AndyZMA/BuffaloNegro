@@ -415,10 +415,110 @@ body {
 }
 
 
+/* ==========================================
+   Sección de Precios / Imágenes
+   ========================================== */
+   .price-section {
+    position: relative; /* Muy importante para que el ::before se posicione bien */
+
+    background-color: #000; /* Fondo negro para mantener el estilo */
+    padding: 80px 20px;     /* Espaciado superior e inferior */
+    text-align: center;
+    color: #fff;            /* Texto en blanco */
+    color: #fff;
+    overflow: hidden; /* Para evitar que sobresalga el fondo inclinado */
+  }
+  
+  .price-container {
+    max-width: 1200px;      /* Ajusta según tus necesidades */
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Título de la sección */
+  .gallery-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #fdda00; /* Amarillo característico de Monkey Papas */
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  
+  /* Texto descriptivo debajo del título */
+  .price-subtext {
+    font-size: 35px;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+  
+  /* Contenedor en cuadrícula para las imágenes */
+  .price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* auto-fit permite que las columnas se ajusten automáticamente
+       y minmax(250px, 1fr) define el ancho mínimo y máximo */
+    gap: 20px;  /* Espacio entre las columnas y filas */
+  }
+  
+  /* Cada "tarjeta" de imagen */
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #fdda00; /* Marco amarillo */
+    border-radius: 5px;
+  }
+  
+  /* Imagen dentro de cada tarjeta */
+  .price-item img {
+  width: 100%;
+  height: 200px; /* O el alto que se adapte a tu diseño */
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+  
+  /* Efecto hover: la imagen se agranda ligeramente */
+  .gallery-item:hover img {
+    transform: scale(1.05);
+  }
+
+ /* .price-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #ffc72c;  Amarillo del diseño 
+    transform: skewY(2deg);
+    transform-origin: top right;
+    z-index: 1;
+  }*/
+  
+  
+  /* Ajustes Responsivos (opcionales) */
+  @media (max-width: 768px) {
+    .gallery-title {
+      font-size: 1.5rem;
+    }
+    .gallery-subtext {
+      font-size: 0.95rem;
+    }
+  }
+
+
+
 .brand-section {
+  position: relative; /* Muy importante para que el ::before se posicione bien */
+
   background-color: #000; /* Fondo negro */
   padding: 80px 20px;     /* Espacio superior e inferior */
   text-align: center;     /* Centrado general del contenido */
+  overflow: hidden; /* Para evitar que sobresalga el fondo inclinado */
+
 }
 
 .brand-container {
@@ -459,6 +559,19 @@ body {
   color: #fff;
   font-weight: 600;
   letter-spacing: 1px;
+}
+
+.brand-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #ffc72c; /* Amarillo del diseño */
+  transform: skewY(-2deg);
+  transform-origin: top left;
+  z-index: 1;
 }
 
 /* Responsivo: reducir tamaño en pantallas pequeñas */
