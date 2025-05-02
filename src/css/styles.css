@@ -247,80 +247,99 @@ body {
   }
 
 
-  /* ==========================================
-   Sección de Galería / Imágenes
-   ========================================== */
+  /* --------------------------------------------
+   Estilos originales de la galería
+   -------------------------------------------- */
 .gallery-section {
-    background-color: #000; /* Fondo negro para mantener el estilo */
-    padding: 80px 20px;     /* Espaciado superior e inferior */
-    text-align: center;
-    color: #fff;            /* Texto en blanco */
+  background-color: #000;
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.gallery-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #fdda00;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.gallery-subtext {
+  font-size: 1rem;
+  margin: 0 auto 40px;
+  max-width: 700px;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------
+   Ajustes para Swiper (2 slides visibles)
+   -------------------------------------------- */
+.gallery-swiper {
+  max-width: 720px;       /* 2 × 350px + 20px de margen */
+  margin: 0 auto;
+  padding: 10px 0;        /* espacio arriba/abajo para el borde */
+  overflow: hidden;       /* recorta las slides que queden fuera */
+}
+
+.gallery-swiper .swiper-wrapper {
+  display: flex;          /* flex para slides en fila */
+}
+
+/* Cada slide ocupa la mitad del ancho restante menos el gap */
+.gallery-swiper .swiper-slide {
+  flex: 0 0 calc((100% - 20px) / 2);
+  margin-right: 20px;     /* gap entre slides */
+}
+
+/* Elimina el margin en la última slide para que no cree espacio extra */
+.gallery-swiper .swiper-slide:last-child {
+  margin-right: 0;
+}
+
+/* --------------------------------------------
+   Estilos de cada tarjeta de imagen
+   -------------------------------------------- */
+.gallery-item {
+  box-sizing: border-box;     /* incluye el borde en el ancho */
+  width: 100%;
+  border: 2px solid #fdda00;  /* marco amarillo */
+  border-radius: 5px;
+  overflow: hidden;           /* que la imagen no desborde */
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;               /* altura automática para no cortar */
+  object-fit: cover;          /* rellena sin deformar */
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* --------------------------------------------
+   Ajustes Responsivos
+   -------------------------------------------- */
+@media (max-width: 768px) {
+  .gallery-swiper {
+    max-width: 90%;
   }
+  .gallery-swiper .swiper-slide {
+    flex: 0 0 100%;           /* en móvil, vuelve a 1 slide */
+    margin-right: 0;
+  }
+}
+
   
-  .gallery-container {
-    max-width: 1200px;      /* Ajusta según tus necesidades */
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-  
-  /* Título de la sección */
-  .gallery-title {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #fdda00; /* Amarillo característico de Monkey Papas */
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-  
-  /* Texto descriptivo debajo del título */
-  .gallery-subtext {
-    font-size: 1rem;
-    margin-bottom: 40px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.5;
-  }
-  
-  /* Contenedor en cuadrícula para las imágenes */
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* auto-fit permite que las columnas se ajusten automáticamente
-       y minmax(250px, 1fr) define el ancho mínimo y máximo */
-    gap: 20px;  /* Espacio entre las columnas y filas */
-  }
-  
-  /* Cada "tarjeta" de imagen */
-  .gallery-item {
-    position: relative;
-    overflow: hidden;
-    border: 2px solid #fdda00; /* Marco amarillo */
-    border-radius: 5px;
-  }
-  
-  /* Imagen dentro de cada tarjeta */
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Recorta la imagen para que encaje sin deformarse */
-    transition: transform 0.3s ease;
-  }
-  
-  /* Efecto hover: la imagen se agranda ligeramente */
-  .gallery-item:hover img {
-    transform: scale(1.05);
-  }
-  
-  /* Ajustes Responsivos (opcionales) */
-  @media (max-width: 768px) {
-    .gallery-title {
-      font-size: 1.5rem;
-    }
-    .gallery-subtext {
-      font-size: 0.95rem;
-    }
-  }
 
   
   /* ======================================
@@ -383,7 +402,7 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Botón "Sucursales" */
+/* Btn "Sucursales" */
 .territorio-button {
   display: inline-block;
   background-color: #111;
@@ -400,7 +419,7 @@ body {
   color: #111;
 }
 
-/* Adaptación a pantallas más pequeñas */
+/* responsive*/
 @media (max-width: 768px) {
   .territorio-container {
     flex-direction: column;
@@ -408,106 +427,110 @@ body {
   }
 
   .territorio-image img {
-    width: 100%;      /* La imagen se ajusta al ancho */
-    max-width: 300px; /* Evita que crezca demasiado en pantallas pequeñas */
+    width: 100%;      
+    max-width: 300px; 
     margin-bottom: 20px;
   }
 }
 
 
 /* ==========================================
-   Sección de Precios / Imágenes
+   1. Estilos originales de la sección
    ========================================== */
    .price-section {
-    position: relative; /* Muy importante para que el ::before se posicione bien */
-
-    background-color: #000; /* Fondo negro para mantener el estilo */
-    padding: 80px 20px;     /* Espaciado superior e inferior */
+    position: relative;
+    background-color: #000;
+    padding: 80px 20px;
     text-align: center;
-    color: #fff;            /* Texto en blanco */
     color: #fff;
-    overflow: hidden; /* Para evitar que sobresalga el fondo inclinado */
+    overflow: hidden;
   }
   
   .price-container {
-    max-width: 1200px;      /* Ajusta según tus necesidades */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
   }
   
-  /* Título de la sección */
   .gallery-title {
     font-size: 2rem;
     margin-bottom: 10px;
-    color: #fdda00; /* Amarillo característico de Monkey Papas */
+    color: #fdda00;
     font-weight: 700;
     letter-spacing: 1px;
   }
   
-  /* Texto descriptivo debajo del título */
   .price-subtext {
     font-size: 35px;
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
     max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
     line-height: 1.5;
   }
   
-  /* Contenedor en cuadrícula para las imágenes */
-  .price-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    /* auto-fit permite que las columnas se ajusten automáticamente
-       y minmax(250px, 1fr) define el ancho mínimo y máximo */
-    gap: 20px;  /* Espacio entre las columnas y filas */
+  /* ==========================================
+     2. Ajustes para Swiper (1 slide visible)
+     ========================================== */
+  .price-swiper {
+    max-width: 420px;             /* ancho deseado del carrusel */
+    margin: 0 auto 40px;
+    overflow: hidden;             /* recorta todo lo que sobra */
+    padding: 0 !important;        /* elimina cualquier padding lateral */
   }
   
-  /* Cada "tarjeta" de imagen */
+  .price-swiper .swiper-wrapper {
+    display: flex;                /* slides en fila */
+    padding: 0 !important;        /* elimina padding de wrapper */
+  }
+  
+  .price-swiper .swiper-slide {
+    flex: 0 0 100%;               /* 1 slide ocupa el 100% */
+    display: flex;
+    justify-content: flex-start;  /* alinea la tarjeta al borde izquierdo */
+  }
+  
+  /* ==========================================
+     3. Estilos de cada "tarjeta" de imagen
+     ========================================== */
   .gallery-item {
-    position: relative;
-    overflow: hidden;
-    border: 2px solid #fdda00; /* Marco amarillo */
+    box-sizing: border-box;       
+    width: 100% !important;       /* ocupa todo el slide */
+    max-width: none !important;   /* elimina tope de anchura */
+    border: 2px solid #fdda00;
     border-radius: 5px;
+    overflow: hidden;
   }
   
-  /* Imagen dentro de cada tarjeta */
-  .price-item img {
-  width: 100%;
-  height: 200px; /* O el alto que se adapte a tu diseño */
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
+  .gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto;                 /* preserva proporción completa */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
   
-  /* Efecto hover: la imagen se agranda ligeramente */
   .gallery-item:hover img {
     transform: scale(1.05);
   }
-
- /* .price-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background-color: #ffc72c;  Amarillo del diseño 
-    transform: skewY(2deg);
-    transform-origin: top right;
-    z-index: 1;
-  }*/
   
-  
-  /* Ajustes Responsivos (opcionales) */
+  /* ==========================================
+     4. Ajustes Responsivos
+     ========================================== */
   @media (max-width: 768px) {
     .gallery-title {
       font-size: 1.5rem;
     }
-    .gallery-subtext {
+    .price-subtext {
       font-size: 0.95rem;
     }
+    .price-swiper {
+      max-width: 90%;
+    }
+    .price-swiper .swiper-slide {
+      justify-content: center;    /* en móvil centra la tarjeta */
+    }
   }
+  
+  
 
 
 

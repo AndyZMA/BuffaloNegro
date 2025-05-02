@@ -6,10 +6,15 @@
   <title>Bufalo Negro</title>
   <!-- Fuente de ejemplo (Montserrat) - puedes reemplazar con la fuente real -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="shortcut icon" href="src/img/logos/FavBuff.png" type="image/x-icon">
+  <!-- Swiper CSS -->
+<link
+rel="stylesheet"
+href="https://unpkg.com/swiper/swiper-bundle.min.css"
+/>
+
+
   <!-- Enlaza tu hoja de estilos principal -->
   <link rel="stylesheet" href="src/css/styles.css" />
   <link rel="shortcut icon" href="src/img/logos/FavBuff.png" type="image/x-icon">
@@ -110,35 +115,53 @@
 
 
   <!-- Sección de Galería / Imágenes -->
-<section class="gallery-section" id="galeria">
+  <section class="gallery-section" id="galeria">
     <div class="gallery-container">
-      <!-- Título principal de la sección -->
       <h2 class="gallery-title">Nuestra Galería</h2>
-      <!-- Texto opcional debajo del título -->
       <p class="gallery-subtext">
-        Explora nuestra sucursal, productos y momentos destacados que
-        hacen de Bufalo Negro
+        Explora nuestra sucursal, productos y momentos destacados que hacen de Bufalo Negro
       </p>
   
-      <!-- Grid de imágenes -->
-      <div class="gallery-grid">
-        <!-- Repite estos .gallery-item por cada imagen que desees mostrar -->
-        <div class="gallery-item">
-          <img src="src/img/Galleria/Galeria1.JPG" alt="Sucursal Monkey Papas" />
+      <!-- Carrusel Swiper -->
+      <div class="swiper gallery-swiper">
+        <div class="swiper-wrapper gallery-grid">
+          <div class="swiper-slide gallery-item">
+            <img src="src/img/Galleria/Galeria1.JPG" alt="Sucursal Monkey Papas" />
+          </div>
+          <div class="swiper-slide gallery-item">
+            <img src="src/img/Galleria/Galeria2.JPG" alt="Sucursal Monkey Papas" />
+          </div>
+          <div class="swiper-slide gallery-item">
+            <img src="src/img/Galleria/Galeria3.JPG" alt="Sucursal Monkey Papas" />
+          </div>
+          
+          <div class="swiper-slide gallery-item">
+            <img src="src/img/Galleria/Galeria4.JPG" alt="Sucursal Monkey Papas" />
+          </div>
+
+          <div class="swiper-slide gallery-item">
+            <img src="src/img/Galleria/Galeria5.jpg" alt="Sucursal Monkey Papas" />
+          </div>
+
+          <div class="swiper-slide gallery-item">
+            <img src="src/img/Galleria/Galeria6.jpg" alt="Sucursal Monkey Papas" />
+          </div>
+
+          <div class="swiper-slide gallery-item">
+            <img src="src/img/Galleria/Galeria7.jpg" alt="Sucursal Monkey Papas" />
+          </div>
+
+          <div class="swiper-slide gallery-item">
+            <img src="src/img/Galleria/Galeria8.png" alt="Sucursal Monkey Papas" />
+          </div>
+          
+
+
         </div>
-        <div class="gallery-item">
-          <img src="src/img/Galleria/Galeria2.JPG" alt="Sucursal Monkey Papas" />
-        </div>
-        <div class="gallery-item">
-          <img src="src/img/Galleria/Galeria3.JPG" alt="Sucursal Monkey Papas" />
-        </div>
-        <div class="gallery-item">
-          <img src="src/img/Galleria/Galeria4.JPG" alt="Sucursal Monkey Papas" />
-        </div>
-        <!-- Agrega más .gallery-item según la cantidad de fotos que tengas -->
       </div>
     </div>
   </section>
+  
   
 
   <!-- Sección de Territorio Monkey Papas -->
@@ -175,49 +198,44 @@
 
 <section class="price-section" id="galeria">
   <div class="price-container">
-    <!-- Título principal de la sección -->
-    <h2 class="gallery-title">Lleva la fuerza del búfalo a tu ciudad.</h2>
-    <!-- Texto opcional debajo del título -->
-    <p class="price-subtext">
-      ¡Abre tu sucursal Buffalo Negro!
-    </p>
 
-    <!-- Grid de imágenes -->
-    <div class="price-grid">
-      <!-- Repite estos .gallery-item por cada imagen que desees mostrar -->
-      <div class="gallery-item">
-        <img src="src/img/Galleria/Precios1.png" alt="Sucursal Monkey Papas" />
+    <!-- Título y subtítulo -->
+    <h2 class="gallery-title">Lleva la fuerza del búfalo a tu ciudad.</h2>
+    <p class="price-subtext">¡Abre tu sucursal Buffalo Negro!</p>
+
+    <!-- Carrusel Swiper -->
+    <div class="swiper price-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide gallery-item">
+          <img src="src/img/Galleria/Precios1.png" alt="Precio 1" />
+        </div>
+        <div class="swiper-slide gallery-item">
+          <img src="src/img/Galleria/Precios2.png" alt="Precio 2" />
+        </div>
+        <div class="swiper-slide gallery-item">
+          <img src="src/img/Galleria/Precios3.png" alt="Precio 3" />
+        </div>
       </div>
-      <!-- <div class="gallery-item">
-        <img src="src/img/Galleria/Galeria2.JPG" alt="Sucursal Monkey Papas" />
-      </div> -->
-      <div class="gallery-item">
-        <img src="src/img/Galleria/Precios2.png" alt="Sucursal Monkey Papas" />
-      </div>
-      <div class="gallery-item">
-        <img src="src/img/Galleria/Precios3.png" alt="Sucursal Monkey Papas" />
-      </div>
-      <!-- Agrega más .gallery-item según la cantidad de fotos que tengas -->
+      <!-- Paginación o flechas (opcional) -->
+      <!-- <div class="swiper-pagination"></div>
+           <div class="swiper-button-prev"></div>
+           <div class="swiper-button-next"></div> -->
     </div>
-    <br><br>
-    <h2 class="gallery-title">
-      BENEFICIOS DE TU INVERSIÓN </h2>
-      <br><br>
-      <ul style="list-style: none; padding: 0;">
-        
-        <li style="font-size: 30px;">Uso y explotación de la marca</li>
-        
-        <li style="font-size: 30px;">Know how del negocio</li>
-        <li style="font-size: 30px;">Manuales y documentos únicos</li>
-        <li style="font-size: 30px;">Desarrollo e innovación</li>
-        <li style="font-size: 30px;">Apoyo en ubicación</li>
-        <li style="font-size: 30px;">Proyecto arquitectónico y supervisión</li>
-        <li style="font-size: 30px;">Entrenamiento de apertura</li>
-        <li style="font-size: 30px;">Asistencia técnica y publicidad</li>
-        <li style="font-size: 30px;">Capacitación constante y supervisión</li>
-        <li style="font-size: 30px;">Proveedores exclusivos</li>
-      </ul>
-   
+
+    <!-- Beneficios -->
+    <h2 class="gallery-title">BENEFICIOS DE TU INVERSIÓN</h2>
+    <ul style="list-style: none; padding: 0; margin-top: 20px;">
+      <li style="font-size: 30px;">Uso y explotación de la marca</li>
+      <li style="font-size: 30px;">Know how del negocio</li>
+      <li style="font-size: 30px;">Manuales y documentos únicos</li>
+      <li style="font-size: 30px;">Desarrollo e innovación</li>
+      <li style="font-size: 30px;">Apoyo en ubicación</li>
+      <li style="font-size: 30px;">Proyecto arquitectónico y supervisión</li>
+      <li style="font-size: 30px;">Entrenamiento de apertura</li>
+      <li style="font-size: 30px;">Asistencia técnica y publicidad</li>
+      <li style="font-size: 30px;">Capacitación constante y supervisión</li>
+      <li style="font-size: 30px;">Proveedores exclusivos</li>
+    </ul>
 
   </div>
 </section>
@@ -347,6 +365,15 @@
     </div>
   </div>
 </footer>
+
+
+
+<!-- justo antes de </body> -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="src/js/Carrusel.js"></script>
+
+
+
 
 </body>
 </html>
