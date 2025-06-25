@@ -267,70 +267,43 @@ href="https://unpkg.com/swiper/swiper-bundle.min.css"
 <section class="franquicia-section" id="contacto">
   <div class="franquicia-container">
     <h2 class="franquicia-title">¡QUIERO MI FRANQUICIA!</h2>
-    <form class="franquicia-form" action="#" method="post">
-      
-      <!-- Fila: Nombre - Apellido -->
-      <div class="form-row">
-        <div class="form-group">
-          <label for="nombre">Nombre*</label>
-          <input type="text" id="nombre" name="nombre" required />
-        </div>
-        <div class="form-group">
-          <label for="apellido">Apellido*</label>
-          <input type="text" id="apellido" name="apellido" required />
-        </div>
-      </div>
+    <form class="franquicia-form" id="formulario">
+  
+  <!-- Fila: Nombre - Apellido -->
+  <div class="form-row">
+    <div class="form-group">
+      <label for="nombre">Nombre*</label>
+      <input type="text" id="nombre" name="name" required />
+    </div>
+    <div class="form-group">
+      <label for="apellido">Apellido*</label>
+      <input type="text" id="apellido" name="lastname" required />
+    </div>
+  </div>
 
-      <!-- Fila: Correo - Teléfono -->
-      <div class="form-row">
-        <div class="form-group">
-          <label for="email">Correo electrónico*</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div class="form-group">
-          <label for="telefono">Teléfono*</label>
-          <input type="tel" id="telefono" name="telefono" required />
-        </div>
-      </div>
+  <!-- Fila: Correo - Teléfono -->
+  <div class="form-row">
+    <div class="form-group">
+      <label for="email">Correo electrónico*</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+    <div class="form-group">
+      <label for="telefono">Teléfono*</label>
+      <input type="tel" id="telefono" name="phone" required />
+    </div>
+  </div>
 
-      <!-- Fila: Presupuesto - Estado de interés -->
-      <!-- <div class="form-row">
-        <div class="form-group">
-          <label for="presupuesto">Presupuesto (MXN)*</label>
-          <input type="number" id="presupuesto" name="presupuesto" required />
-        </div>
-        <div class="form-group">
-          <label for="estado">Estado de interés*</label>
-          <select id="estado" name="estado" required>
-            <option value="">Seleccionar...</option>
-            <option value="Aguascalientes">Aguascalientes</option>
-            <option value="Baja California">Baja California</option>
-            <option value="Baja California Sur">Baja California Sur</option>
-            <option value="Campeche">Campeche</option>
-             Agrega más estados según sea necesario 
-          </select>
-        </div>
-      </div> -->
+  <!-- Comentario o mensaje -->
+  <div class="form-row">
+    <div class="form-group full-width">
+      <label for="comentario">Comentario o mensaje</label>
+      <textarea id="comentario" name="message" rows="4"></textarea>
+    </div>
+  </div>
 
-      <!-- Fila: Cuota de interés -->
-      <!-- <div class="form-row">
-        <div class="form-group">
-          <label for="cuota">Cuota de interés</label>
-          <input type="number" id="cuota" name="cuota" />
-        </div>
-      </div> -->
-
-      <!-- Fila: Comentario o mensaje (ocupa todo el ancho) -->
-      <div class="form-row">
-        <div class="form-group full-width">
-          <label for="comentario">Comentario o mensaje</label>
-          <textarea id="comentario" name="comentario" rows="4"></textarea>
-        </div>
-      </div>
-
-      <!-- Botón de envío -->
-      <button type="submit" class="franquicia-submit">Enviar</button>
-    </form>
+  <!-- Botón de envío -->
+  <button type="submit" class="franquicia-submit">Enviar</button>
+</form>
   </div>
 </section>
 
@@ -373,6 +346,25 @@ href="https://unpkg.com/swiper/swiper-bundle.min.css"
 <script src="src/js/Carrusel.js"></script>
 
 
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("TU_PUBLIC_KEY"); // 👈 Reemplaza con tu Public Key real
+  })();
+
+  document.getElementById("formulario").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("TU_SERVICE_ID", "TU_TEMPLATE_ID", this)
+      .then(() => {
+        alert("✅ ¡Mensaje enviado con éxito!");
+        this.reset();
+      }, (error) => {
+        console.error("❌ Error:", error);
+        alert("Hubo un problema al enviar el mensaje.");
+      });
+  });
+</script>
 
 
 </body>
