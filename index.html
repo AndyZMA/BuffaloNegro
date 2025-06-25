@@ -349,13 +349,13 @@ href="https://unpkg.com/swiper/swiper-bundle.min.css"
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
   (function() {
-    emailjs.init("TU_PUBLIC_KEY"); // 👈 Reemplaza con tu Public Key real
+    emailjs.init("Tk1x3SGuOSSJRpVw9"); // 👈 Reemplaza con tu Public Key real
   })();
 
   document.getElementById("formulario").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    emailjs.sendForm("TU_SERVICE_ID", "TU_TEMPLATE_ID", this)
+    emailjs.sendForm("service_12zjp7f", "template_747k4qu", this)
       .then(() => {
         alert("✅ ¡Mensaje enviado con éxito!");
         this.reset();
